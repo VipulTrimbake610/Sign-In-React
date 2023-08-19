@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState } from 'react';
+
+import './index.css'
+import Profile from './Components/Profile';
+import Signup from './Components/Signup';
 
 function App() {
+  let [statuss, setStatuss] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    {
+      console.log(statuss)
+    }
+    {
+      statuss===false && <Signup status={setStatuss}/>
+    }
+    {
+      statuss===true && <Profile status={setStatuss}/> 
+    }
+    </>
   );
 }
 
